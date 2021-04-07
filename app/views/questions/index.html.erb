@@ -1,14 +1,22 @@
-<div class='main_theme' >
-  <div class="upper-message">
-    <div class=message-user>
-      <%= "名前" %>
+<div class="main">
+  <div class='main-theme' >
+    <div class="upper-message">
+      <div class=message-user>
+        <%= "名前" %>
+      </div>
+      <div class="message-date">
+        <%= "投稿にちじ" %>
+      </div>
+    </div>      
+    <div class="lower-message">
+      <div class="message-content">
+        <%= "コメント" %>
+      </div>
     </div>
-    <div class="message-date">
-      <%= "投稿にちじ" %>
-    </div>
-  </div>      
-  <div class="lower-message">
-    <div class="message-content">
-      <%= "コメント" %>
-    </div>
+  </div>
 </div>
+
+<%= link_to(new_question_path, class: 'question-btn') do %>
+  <span class='question-btn-text'>問題を作る</span>
+  <%#= image_tag 'icon_camera.png' , size: '185x50' ,class: "question-btn-icon" %>
+<% end %>

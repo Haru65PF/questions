@@ -64,10 +64,11 @@ has_many :questions
 has_many :comments
 
 ## Questions テーブル
-| Column   | Type    | Option     |
-|          |         |            |
-| question | String  | null:false |
-| junle_id | Integer | null:false |
+| Column   | Type       | Option     |
+|          |            |            |
+| question | String     | null:false |
+| genre_id | Integer    | null:false |
+| user_id  | references |            |
 
 ### Association
 belongs_to :user

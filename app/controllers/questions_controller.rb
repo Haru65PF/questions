@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   def index
+    @questions = Question.all
   end
 
   def new
@@ -7,8 +8,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @questions = Question.new(question_params)
-    if @item.save
+    @question = Question.new(question_params)
+    if @question.save
       redirect_to root_path
     else
       render :new
@@ -18,6 +19,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    
+    params.require(:question).permit(:question, :genre_id).merge(user_id: current_user.id)
   end
 end

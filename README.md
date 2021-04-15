@@ -79,7 +79,7 @@ has_many :comments
 |             |         |            |
 | user_id     | Integer | references |
 | question_id | Integer | references |
-| comment     | text    | null:false |
+| text        | text    | null:false |
 
 ### Association
 belongs_to :question

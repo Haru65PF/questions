@@ -1,0 +1,27 @@
+<div class="main">
+  <div class='main-theme' >
+    <div class="upper-message">
+      <div class=message-user>
+        <%= @question.user.nickname %>
+      </div>
+      <div class="message-date">
+        <%= @question.created_at %>
+      </div>
+    </div>      
+    <div class="lower-message">
+      <div class="message-content">
+        <%= @question.question %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= form_with(model: @comment, url:question_comments_path, local: true) do |f|%>
+  <div class="field">
+    <%= f.label :text, "回答" %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit "回答する", class: :form__btn  %>
+  </div>
+<% end %> 

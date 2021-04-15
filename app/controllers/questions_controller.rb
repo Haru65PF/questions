@@ -16,6 +16,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def show
+    @question = Question.find(params[:id])
+    @comment = Comment.new
+    @comments = @question.comments.includes(:user)
+  end
+
   private
 
   def question_params
